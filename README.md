@@ -25,18 +25,23 @@ This project evaluates the inference performance of the **MedSAM-2** segmentatio
 ## 🚀 Results
 
 ![Dataset Overview](https://github.com/user-attachments/assets/c30fe9fa-aa6c-47b3-8532-ae8a93ef0ed6)
+
 *Fig 1: Dataset Overview (BRATS-2019)*
 
 ![Failure Analysis results](https://github.com/user-attachments/assets/70f36490-3ca7-4108-a77c-c02e40004e9f)
+
 *Fig 2: Failure Analysis Results*
 
 ![Masked Images](https://github.com/user-attachments/assets/e267a3e8-c5a1-46c2-920f-d5e7e1783361)
+
 *Fig 3: Masked Images of Prediction & Ground Truth*
 
 ![Slicing   Segmentation results](https://github.com/user-attachments/assets/ef79cfb6-a013-4ceb-b62c-f53f12cd30ac)
+
 *Fig 4: Slicing & Segmentation Results*
 
 ![Unet   MedSam results comparison](https://github.com/user-attachments/assets/58f1b65b-e948-42ad-85bc-ce5250a27993)
+
 *Fig 5: MedSAM & U-Net Comparison*
 
 ## 🧰 Requirements
