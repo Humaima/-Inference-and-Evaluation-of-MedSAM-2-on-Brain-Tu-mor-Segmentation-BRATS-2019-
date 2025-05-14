@@ -1,7 +1,6 @@
 # 🧠 Inference Evaluation of MedSAM-2 on Brain Tumor
 
 ![thumbnail](https://github.com/user-attachments/assets/f64d69d3-a156-40fc-8d31-c5e0acc451fa)
-
 This project evaluates the inference performance of the **MedSAM-2** segmentation model on **brain tumor** datasets. It involves loading pretrained MedSAM-2 weights and applying them on brain tumor MRI scans to assess the segmentation quality visually and quantitatively.
 
 ---
