@@ -1,4 +1,4 @@
-# 🧠 Inference Evaluation of MedSAM-2 on Brain Tumor
+![Ground truth results](https://github.com/user-attachments/assets/4759a66e-fcb1-4cfe-84ff-1a17bba56d23)# 🧠 Inference Evaluation of MedSAM-2 on Brain Tumor
 
 ![thumbnail](https://github.com/user-attachments/assets/f64d69d3-a156-40fc-8d31-c5e0acc451fa)
 This project evaluates the inference performance of the **MedSAM-2** segmentation model on **brain tumor** datasets. It involves loading pretrained MedSAM-2 weights and applying them on brain tumor MRI scans to assess the segmentation quality visually and quantitatively.
@@ -28,21 +28,29 @@ This project evaluates the inference performance of the **MedSAM-2** segmentatio
 
 *Fig 1: Dataset Overview (BRATS-2019)*
 
-![Failure Analysis results](https://github.com/user-attachments/assets/70f36490-3ca7-4108-a77c-c02e40004e9f)
-
-*Fig 2: Failure Analysis Results*
-
-![Masked Images](https://github.com/user-attachments/assets/e267a3e8-c5a1-46c2-920f-d5e7e1783361)
-
-*Fig 3: Masked Images of Prediction & Ground Truth*
-
 ![Slicing   Segmentation results](https://github.com/user-attachments/assets/ef79cfb6-a013-4ceb-b62c-f53f12cd30ac)
 
-*Fig 4: Slicing & Segmentation Results*
+*Fig 2: Slicing & Segmentation Results*
 
-![Unet   MedSam results comparison](https://github.com/user-attachments/assets/58f1b65b-e948-42ad-85bc-ce5250a27993)
+![Ground truth results](https://github.com/user-attachments/assets/7a5c98e8-9f6d-4143-8ea5-7f780b897604)
 
-*Fig 5: MedSAM & U-Net Comparison*
+*Fig 3(a): Ground Truth Results*
+
+![Ground truth results (a)](https://github.com/user-attachments/assets/b8cbfc89-3afd-42dd-b570-f7b63dd24ade)
+
+*Fig 3(b): Ground Truth Results*
+
+![Overlap results (a)](https://github.com/user-attachments/assets/1d869bd4-9991-49c6-b594-f2b2108e5207)
+
+*Fig 4: Overlaped Results*
+
+![Inference dice and IoU score](https://github.com/user-attachments/assets/62ff9a6e-d500-4787-b99e-1d35a2a38574)
+
+*Fig 5: Inference dice & IoU Scores*
+
+![Evaluation summary](https://github.com/user-attachments/assets/e6f30b64-6571-48e1-affe-83d2e1f67db3)
+
+*Fig 6: Inference Evaluation Summary*
 
 ## 🧰 Requirements
 
@@ -85,32 +93,6 @@ Visual outputs include:
 - Ground truth tumor mask
 - MedSAM-2 predicted segmentation
 - Dice coefficient
-
-### Segmentation Performance Comparison
-
-| Case ID               | Method          | Dice   | IoU   | Worst Slices | Spatial Consistency | Fragmentation (Pred/GT) | Notes                  |
-|-----------------------|-----------------|--------|-------|--------------|---------------------|-------------------------|------------------------|
-| BraTS19_2013_27_1     | MedSAM          | 0.018  | -     | -            | -                   | -                       | Complete failure       |
-|                       | Simulated U-Net | 0.039  | -     | -            | -                   | -                       | 2× better than MedSAM  |
-|                       | Our Method      | 0.071  | 0.037 | 114,106,107  | 17,813.42           | 18,364/2                | Best but still poor    |
-| BraTS19_CBICA_AQA_1   | MedSAM          | 0.005  | -     | -            | -                   | -                       | Worst performance      |
-|                       | Simulated U-Net | 0.006  | -     | -            | -                   | -                       | Minimal improvement    |
-|                       | Our Method      | 0.017  | 0.009 | 106,97,98    | 44,466.45           | 18,321/16               | Extreme fragmentation |
-
-### Key Findings
-
-1. **Severe Underperformance**  
-   - All methods show Dice scores < 0.1 (extremely poor)
-   - MedSAM fails catastrophically (Dice: 0.005-0.018)
-
-2. **Critical Issues**  
-   - 🔴 **Resolution Problems**: Downsampling from 240×240→112×112 destroys details  
-   - 🔴 **Fragmentation**: Predictions have 18K+ components vs GT's 2-16  
-   - 🔴 **Spatial Chaos**: Consistency ratios > 17,000 indicate random predictions
-
-3. **Method Comparison**  
-   - Our method outperforms baselines but remains unacceptable  
-   - U-Net shows slight advantage over MedSAM (2-3× better)
 
 ## Summary of Segmentation Performance
 
