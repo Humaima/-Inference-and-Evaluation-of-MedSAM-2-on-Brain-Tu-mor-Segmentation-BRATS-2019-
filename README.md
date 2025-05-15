@@ -86,6 +86,32 @@ Visual outputs include:
 - MedSAM-2 predicted segmentation
 - Dice coefficient
 
+### Segmentation Performance Comparison
+
+| Case ID               | Method          | Dice   | IoU   | Worst Slices | Spatial Consistency | Fragmentation (Pred/GT) | Notes                  |
+|-----------------------|-----------------|--------|-------|--------------|---------------------|-------------------------|------------------------|
+| BraTS19_2013_27_1     | MedSAM          | 0.018  | -     | -            | -                   | -                       | Complete failure       |
+|                       | Simulated U-Net | 0.039  | -     | -            | -                   | -                       | 2× better than MedSAM  |
+|                       | Our Method      | 0.071  | 0.037 | 114,106,107  | 17,813.42           | 18,364/2                | Best but still poor    |
+| BraTS19_CBICA_AQA_1   | MedSAM          | 0.005  | -     | -            | -                   | -                       | Worst performance      |
+|                       | Simulated U-Net | 0.006  | -     | -            | -                   | -                       | Minimal improvement    |
+|                       | Our Method      | 0.017  | 0.009 | 106,97,98    | 44,466.45           | 18,321/16               | Extreme fragmentation |
+
+### Key Findings
+
+1. **Severe Underperformance**  
+   - All methods show Dice scores < 0.1 (extremely poor)
+   - MedSAM fails catastrophically (Dice: 0.005-0.018)
+
+2. **Critical Issues**  
+   - 🔴 **Resolution Problems**: Downsampling from 240×240→112×112 destroys details  
+   - 🔴 **Fragmentation**: Predictions have 18K+ components vs GT's 2-16  
+   - 🔴 **Spatial Chaos**: Consistency ratios > 17,000 indicate random predictions
+
+3. **Method Comparison**  
+   - Our method outperforms baselines but remains unacceptable  
+   - U-Net shows slight advantage over MedSAM (2-3× better)
+
 ## 📚 References
 
 - https://colab.research.google.com/drive/1MKna9Sg9c78LNcrVyG58cQQmaePZq2k2?usp=sharing#scrollTo=FnoCVlmGIgC4
