@@ -94,14 +94,6 @@ Visual outputs include:
 - MedSAM-2 predicted segmentation
 - Dice coefficient
 
-## Summary of Segmentation Performance
-
-| Case ID               | Dice Score | IoU Score | Performance Level       |
-|-----------------------|------------|-----------|-------------------------|
-| BraTS19_2013_27_1     | 0.071      | 0.037     | 🟠 Poor                 |
-| BraTS19_CBICA_AQA_1   | 0.017      | 0.009     | 🔴 Very Poor            |
-| BraTS19_CBICA_ANZ_1   | 0.042      | 0.021     | 🟡 Marginal             |
-
 ## 📚 References
 
 - https://colab.research.google.com/drive/1MKna9Sg9c78LNcrVyG58cQQmaePZq2k2?usp=sharing#scrollTo=FnoCVlmGIgC4
