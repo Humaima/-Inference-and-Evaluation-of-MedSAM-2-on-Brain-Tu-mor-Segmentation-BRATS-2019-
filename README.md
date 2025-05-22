@@ -6,11 +6,11 @@
 
 This repository implements the MedSAM-2 model for brain tumor segmentation using multi-modal MRI data. Built upon the Segment Anything Model 2 (SAM-2), MedSAM-2 introduces advanced self-sorting memory banks and a unified 2D/3D architecture, making it robust for unordered medical data and highly effective for clinical segmentation with minimal prompts.
 
-✅ One-prompt segmentation
-✅ Unified 2D/3D inference
-✅ Medically optimized memory attention
-✅ Dice scores >= 0.5 on test cases
-✅ Comparison with U-Net
+- ✅ One-prompt segmentation
+- ✅ Unified 2D/3D inference
+- ✅ Medically optimized memory attention
+- ✅ Dice scores >= 0.5 on test cases
+- ✅ Comparison with U-Net
 
 ---
 
@@ -62,7 +62,11 @@ MedSAM-2 extends SAM-2 with innovations tailored for medical imaging:
 
 ![Dataset Overview](https://github.com/user-attachments/assets/c30fe9fa-aa6c-47b3-8532-ae8a93ef0ed6)
 
-*Fig 1: Dataset Overview (BRATS-2019)*
+*Fig 1(a): Dataset Modalities Overview (BRATS-2019)*
+
+![Preprocessed dataset](https://github.com/user-attachments/assets/3ae3babd-0011-4670-acde-9da5c179a8b5)
+
+*Fig 1(b): Preprocessed Dataset*
 
 ![Slicing   Segmentation results](https://github.com/user-attachments/assets/ef79cfb6-a013-4ceb-b62c-f53f12cd30ac)
 
@@ -84,9 +88,9 @@ MedSAM-2 extends SAM-2 with innovations tailored for medical imaging:
 
 *Fig 5: Inference dice & IoU Scores*
 
-![Evaluation summary](https://github.com/user-attachments/assets/e6f30b64-6571-48e1-affe-83d2e1f67db3)
+![MedSam2   U-net Comparison](https://github.com/user-attachments/assets/e9a63a7a-25ea-4c8d-929a-48168a8537d5)
 
-*Fig 6: Inference Evaluation Summary*
+*Fig 6: MedSAM2 & U-Net Comparison*
 
 ## 📊 Evaluation Metrics
 
@@ -150,6 +154,15 @@ Segmentation results and evaluation metrics will be displayed within the noteboo
 - https://github.com/bowang-lab/MedSAM2
 - https://www.kaggle.com/datasets/aryashah2k/brain-tumor-segmentation-brats-2019/data
 
+## 📌 Limitations & Future Work
+
+- Performance varies with prompt accuracy and tumor shape
+- Struggles with irregular tumors or diffuse growth
+- Future goals:
+  - Real-time deployment
+  - Multilingual clinical inference
+  - Emotion & severity conditioning
+  
 ## 📄 License
 
 This project is under the MIT License. Please check original model licenses for additional terms.
